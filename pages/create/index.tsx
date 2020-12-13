@@ -4,8 +4,6 @@ import {api} from '../config'
 import { useRecoilState } from 'recoil'
 import {getAtom} from '../../util/atoms'
 
-// let sessionId = "abcd"
-
 export function CreateGame() {
 
     const sessionAtom = getAtom("session")
@@ -26,7 +24,6 @@ export function CreateGame() {
             console.log("fetch:", response)
             setSessionId(response.id)
         })
-        // setSessionId(response.id)
     }, [])
 
 

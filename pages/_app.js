@@ -1,16 +1,15 @@
 import '../styles/globals.css'
 import {
-  RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
+  RecoilRoot
 } from 'recoil';
+import { ChakraProvider } from "@chakra-ui/react"
 
 function MyApp({ Component, pageProps }) {
   return (
   <RecoilRoot>
-    <Component {...pageProps} />
+    <ChakraProvider>
+      <Component {...pageProps} />
+    </ChakraProvider>
   </RecoilRoot>)
 }
 

@@ -7,6 +7,22 @@ import _ from 'lodash'
 const atoms = [{
     key: "session",
     default: ""
+},
+{
+    key: "commandText",
+    default: ""
+},
+{
+    key: "userId",
+    default: ""
+},
+{
+    key: "websocket",
+    default: {}
+},
+{
+    key: "events",
+    default: [{"event": "start", "message": ""}]
 }]
 
 function getAtomFromId(id: string){
