@@ -5,29 +5,31 @@ import { getAtom } from "../util/atoms";
 import { Input } from "@chakra-ui/react"
 
 export default function Chat(props) {
+
+    const commandAtom = getAtom("commandText")
+    const [commandText, setCommandText] = useRecoilState(commandAtom)
+    
     let ws = {};
 
     useEffect(()=>{
         ws = props.ws
     }, [props])
 
-    console.log(props)
-    const commandAtom = getAtom("commandText")
-    const [commandText, setCommandText] = useRecoilState(commandAtom)
+    // console.log("props", props)
+
 
     function sendCommand(event){
         // console.log("event", event)
 
         if(event.key === 'Enter'){
-
             const event = {
                 event: "COMMAND",
                 message: commandText,
                 userId: props.userId
             }
-            props.send(JSON.stringify(event))
+             props.send(JSON.stringify(event))
             
-            console.log("text entered: ",commandText)
+            // console.log("text entered: ",commandText)
             setCommandText("")
         }
     }

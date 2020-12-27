@@ -22,15 +22,15 @@ const atoms = [{
 },
 {
     key: "events",
-    default: [{"event": "start", "message": ""}]
+    default: []// 
 }]
 
 function getAtomFromId(id: string){
-    console.log("atom",id)
+    // console.log("atom",id)
     const atomToReturn = find(propEq('key', id))(atoms)
-    console.log("atomToReturn", atomToReturn)
+    // console.log("atomToReturn", atomToReturn)
     if(atomToReturn){
-        console.log("here")
+        // console.log("here")
         return atom(atomToReturn);
     }else{
         return atom({key: 'default', default: ''})
@@ -38,5 +38,3 @@ function getAtomFromId(id: string){
 }
 
 export const getAtom = _.memoize(getAtomFromId)
-
-// export const getAtom = memoize(function ())
