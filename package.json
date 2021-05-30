@@ -29,7 +29,7 @@
     "socket.io-client": "^3.0.3",
     "use-socket.io-client": "^1.1.0",
     "uuid": "^8.3.1",
-    "ws": "^7.4.0"
+    "ws": "^7.4.6"
   },
   "devDependencies": {
     "@types/node": "^14.14.10",
